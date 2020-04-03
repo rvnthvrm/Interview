@@ -5,7 +5,9 @@ def substring(inp):
         if len(i) == len(set(i)):
             final_out.append(i)
 
-    print(list(set(final_out)))
+    o = list(set(final_out))
+    print('All Substrings: ', o)
+    print('Largest Substring: ', max(o, key=len))
 
 
 if __name__ == '__main__':
