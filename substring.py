@@ -9,3 +9,13 @@ def substring(inp):
 if __name__ == '__main__':
     inp = "aabbbabcdeefghi"
     substring(inp)
+
+    
+```
+########### OUTPUT #######################
+In [3]: inp = "aabbbabcdeefghi"
+   ...: substring(inp)
+All Substrings:  ['a', 'ab', 'abc', 'abcd', 'abcde', 'b', 'ba', 'bc', 'bcd', 'bcde', 'c', 'cd', 'cde', 'd', 'de', 'e', 'ef', 'efg', 'efgh', 'efghi', 'f', 'fg', 'fgh', 'fghi', 'g', 'gh', 'ghi', 'h', 'hi', 'i']
+Largest Substring:  abcde
+```
+    
