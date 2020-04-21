@@ -33,14 +33,13 @@ def checkout(products):
         # Purchase a bag of Oatmeal and get 50% off a bag of Apples
         if k == 'OM1':
             total += (market[k] * v) - (count_by_item['AP1'] * market['AP1'] / 2)
+            continue
 
         # Purchase a box of Chai and get milk free. (Limit 1)
         if k == 'MK1' and 'CH1' in products:
             total += market[k] * (v - 1)
-            continue
         else:
             total += market[k] * v
-            continue
 
     return total
 
