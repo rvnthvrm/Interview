@@ -1,9 +1,6 @@
-# weight = [3,5,2,6,7,1,2,7,1,7]  # Hours
-# height = [80,90,75,80,90,50,65,85,40,100]  # Percentage
-
-
-# weight = [3, 4, 5, 5, 6, 8, 7, 7.5, 9, 8, 4.5, 4, 6.5, 7, 2, 6, 4, 11, 10.5]  # No of years Of extperience
-# height = [10, 10, 15, 15, 20, 15, 20, 25, 20, 25, 30, 25, 30, 15, 25, 20, 25, 20, 15]  #  % Hike
+'''
+Sample code to find the accurate Intercept (C) and Slope or Gradient of Line (M) for 2D Linear Equation 
+'''
 
 weight = [0.5, 2.3, 2.9]
 height = [1.4, 1.9, 3.2]
@@ -27,5 +24,5 @@ mean = sum(multiply_mods)/sum(square_weight_mods)
 height_intercept = height_mod - (mean * weight_mod) # Constant
 
 
-y = (mean * 2) + height_intercept  # y= mx + c (y- dependent variable m - Mean or c - Intercept at y)
+y = (mean * 2) + height_intercept  # y= mx + c (y- dependent variable m - Slope or c - Intercept at y)
 print(y)
