@@ -1,28 +1,32 @@
 '''
-Sample code to find the accurate Intercept (C) and Slope or Gradient of Line (M) for 2D Linear Equation 
+        _   _      _       _       _    _         _           _    _     _
+X   Y   X   Y    X-X     Y-Y    (X-X)(Y-Y)     (X-X)^2     (X-X)(Y-Y)/(X-X)^2
 '''
 
-weight = [0.5, 2.3, 2.9]
-height = [1.4, 1.9, 3.2]
+x = [1,2,3,4,5]
+y = [2,4,5,4,5]
 
 
-weight_mod = sum(weight) / len(weight)  # x -- axis
-height_mod = sum(height) / len(height)  # y --axis
+x_mod = sum(x) / len(x)
+y_mod = sum(y) / len(y)
 
-weight_minus_weight_mod = [(weight[i] - weight_mod) for i in range(len(weight))]  # ([x1 - mod(x)])
-height_minus_height_mod = [(height[i] - height_mod) for i in range(len(height))]  # ([y1 -mod(y)])
+x_minus_x_mod = [(x[i] - x_mod) for i in range(len(x))]
+y_minus_y_mod = [(y[i] - y_mod) for i in range(len(y))]
 
-multiply_mods = [(weight_minus_weight_mod[i] * height_minus_height_mod[i]) for i in range(len(weight))]  # (x1 - mod(x))(y1 - mod(y))
-square_weight_mods = [(weight_minus_weight_mod[i] * weight_minus_weight_mod[i]) for i in range(len(weight))] # (x1 - mod(x)) ^2
-
-'''
-M = (x1 - mod(x))(y1 - mod(y))/(x1 - mod(x)) ^2
-'''
-
-mean = sum(multiply_mods)/sum(square_weight_mods) 
-
-height_intercept = height_mod - (mean * weight_mod) # Constant
+multiply_xy_mods = [(x_minus_x_mod[i] * y_minus_y_mod[i]) for i in range(len(x))]
+square_x_mods = [(x_minus_x_mod[i] * x_minus_x_mod[i]) for i in range(len(x))]
 
 
-y = (mean * 2) + height_intercept  # y= mx + c (y- dependent variable m - Slope or c - Intercept at y)
-print(y)
+slope = sum(multiply_xy_mods)/sum(square_x_mods)
+intercept = y_mod - (slope * x_mod)
+
+print('Slope: ', slope)
+print('Intercet At Y: ', intercept)
+
+# Now If you want You Can Substitute All the Values in
+# y= mx+c and Input the Independent Variable to get the
+# Approximate Value of y.
+# Example : y = mx+c
+#Slope:  0.6 -- m
+#Intercet At Y:  2.2 - constant C
+# y = 0.6 * 2.5 + 2.2
