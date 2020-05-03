@@ -21,7 +21,7 @@ slope = sum(multiply_xy_mods)/sum(square_x_mods)
 intercept = y_mod - (slope * x_mod)
 
 print('Slope: ', slope)
-print('Intercet At Y: ', intercept)
+print('Intercept At Y: ', intercept)
 
 # Now If you want You Can Substitute All the Values in
 # y= mx+c and Input the Independent Variable to get the
@@ -30,3 +30,23 @@ print('Intercet At Y: ', intercept)
 #Slope:  0.6 -- m
 #Intercet At Y:  2.2 - constant C
 # y = 0.6 * 2.5 + 2.2
+
+# Now the Fun Part Comes to Test whether the Intercept is the Best Fit Or not we will verify 
+# Using R^2 and Standard Error Estimation.
+########################## R^2 ##########################################################
+
+'''
+FORMULA:
+
+              ^    _
+             (Y  - Y) ^2
+ R^2 = Sigma ------------
+                  _
+            ( Y - Y) ^2
+            
+Standard Error Estimation: 
+                           ^
+                          (Y - Y )^2
+SEE =  Squareroot(Sigma -----------------)
+                            n - 2   
+'''
